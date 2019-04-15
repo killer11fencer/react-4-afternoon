@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export default class ClassList extends Component {
   constructor() {
@@ -14,7 +15,7 @@ Axios.get(`http://localhost:3005/students?class=${this.props.match.params.class}
 }
   render() {
     let displayArray = this.state.students.map((elem,index)=>
-    { return <h3 key={index}>{elem.first_name} {elem.last_name}</h3>
+    { return <Link key={index} to={`/student/${elem.id}`}><h3 >{elem.first_name} {elem.last_name}</h3></Link>
               })
     return (
       <div className="box">
