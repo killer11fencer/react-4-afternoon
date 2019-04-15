@@ -15,14 +15,14 @@ Axios.get(`http://localhost:3005/students?class=${this.props.match.params.class}
 }
   render() {
     let displayArray = this.state.students.map((elem,index)=>
-    { return <Link key={index} to={`/student/${elem.id}`}><h3 >{elem.first_name} {elem.last_name}</h3></Link>
+    { return <Link key={index} to={`/student/${elem.id}`}g><h3 >{elem.first_name} {elem.last_name}</h3></Link>
               })
     return (
       <div className="box">
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:</h2>
         {displayArray}
-
+        <Link to='/'><button>Home</button></Link>
       </div>
     )
   }

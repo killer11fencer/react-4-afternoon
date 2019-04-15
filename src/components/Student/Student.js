@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export default class Student extends Component {
   constructor() {
@@ -19,6 +20,7 @@ Axios.get(`http://localhost:3005/students/${this.props.match.params.id}`).then(r
         <h1>{student.first_name} {student.last_name}</h1>
         <h3>Grade: {student.grade}</h3>
         <h3>Email: {student.email}</h3>
+       <Link to={`/classlist/${student.class}`}><button>Back</button> </Link>
       </div>
     )
   }
